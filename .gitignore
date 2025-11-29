@@ -1,0 +1,55 @@
+### Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### Build output
+dist/
+build/
+out/
+
+### Vite / Frontend
+/.vite/
+public/build/
+
+### TypeScript
+*.tsbuildinfo
+
+### Logs
+*.log
+logs/
+
+### OS files
+.DS_Store
+Thumbs.db
+
+### Environment
+.env
+.env.*
+
+### Uploaded assets and runtime storage
+uploads/
+attached_assets/
+dist/public/
+
+### Editor directories and files
+.vscode/
+.idea/
+
+### Temporary files
+.tmp/
+.temp/
+
+### Lockfiles (optional - remove if you track lockfiles)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+### CI / Deployment
+/.netlify/
+/.vercel/
+
+# End of .gitignore
+
