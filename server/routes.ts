@@ -44,12 +44,16 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "shahzadart2024";
 
 // Email configuration
 const createTransporter = () => {
+  // enable logger/debug when EMAIL_DEBUG=true (useful for local troubleshooting)
+  const enableDebug = String(process.env.EMAIL_DEBUG).toLowerCase() === "true";
   return nodemailer.createTransport({
     service: "gmail",
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
+    logger: enableDebug,
+    debug: enableDebug,
   });
 };
 

@@ -59,17 +59,17 @@ export function Navigation() {
         transition={{ duration: 0.5, delay: 0.2 }}
         data-testid="navigation"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-7xl mx-auto px-2 xs:px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 xs:h-16 md:h-20">
             {/* Logo */}
             <motion.button
               onClick={() => scrollToSection("#home")}
-              className="flex items-center gap-2"
+              className="flex items-center gap-1 xs:gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-testid="link-home-logo"
             >
-              <span className="font-serif text-2xl md:text-3xl font-bold gradient-text">
+              <span className="font-serif text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold gradient-text truncate">
                 Shahzad Akram
               </span>
             </motion.button>
@@ -198,18 +198,18 @@ export function Navigation() {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
-              className="absolute right-0 top-16 bottom-0 w-64 bg-card border-l border-border p-6"
+              className="absolute right-0 top-14 xs:top-16 md:top-20 bottom-0 w-48 xs:w-56 sm:w-64 bg-card border-l border-border p-3 xs:p-4 sm:p-6"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2 xs:gap-3">
                 {navLinks.map((link, i) => (
                   <motion.button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="text-left text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-left text-base xs:text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-1 xs:py-2"
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: i * 0.1 }}

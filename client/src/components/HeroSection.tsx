@@ -7,12 +7,12 @@ export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end center"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.6], [1, 0.9]);
 
   const scrollToGallery = () => {
     const element = document.querySelector("#gallery");
@@ -25,7 +25,7 @@ export function HeroSection() {
     <section
       ref={ref}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-14 xs:pt-16 md:pt-20"
       data-testid="section-hero"
     >
       {/* Animated background gradient */}
@@ -38,6 +38,7 @@ export function HeroSection() {
             radial-gradient(circle at 50% 50%, hsl(var(--secondary) / 0.2) 0%, transparent 70%)
           `,
           y,
+          willChange: "transform",
         }}
       />
 
@@ -72,7 +73,7 @@ export function HeroSection() {
       {/* Main content */}
       <motion.div
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
-        style={{ opacity, scale }}
+        style={{ opacity, scale, willChange: "opacity, transform" }}
       >
         {/* Profile Image with artistic frame */}
         <motion.div

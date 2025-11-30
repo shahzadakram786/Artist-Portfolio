@@ -98,7 +98,7 @@ export function Footer() {
             </nav>
           </motion.div>
 
-          {/* Download Section */}
+          {/* Download Section
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export function Footer() {
               <Download className="w-4 h-4 mr-2" />
               {isDownloading ? "Preparing..." : "Download Source"}
             </Button>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Bottom section */}
